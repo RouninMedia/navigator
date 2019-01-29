@@ -1,26 +1,31 @@
 #GLOBAL-CUSTOM-PROPERTIES,
 :root {
---navigatorControlWidth: 80px;
+  --navigatorControlWidth: 20px;
+  --translateUnit: calc(var(--navigatorControlWidth) / 20);
+  --startTranslate : calc(var(--translateUnit) * 9);
+  --endTranslate : calc(var(--translateUnit) * 3);
 }
 
 #DISPLAY,
-body {
-display: flex;
-}
-
 .navigatorControls {
 display: grid;
 }
 
 #POSITION,
+.navigator,
 .navigatorControl {
 position: relative;
 }
-  
-#FLEX-PARENT,
-body {
-justify-content: center;
-align-items: center;
+
+.navigatorControls {
+position: absolute;
+}
+
+
+.CO-ORDINATES,
+.navigatorControls {
+right: 6px;
+bottom: 6px;
 }
 
 #GRID-PARENT,
@@ -37,10 +42,6 @@ grid-template-rows: var(--navigatorControlWidth) var(--navigatorControlWidth) va
 .navigatorControl.\--center {grid-area: 2 / 2 / 3 / 3;}
 
 #WIDTH_HEIGHT,
-body {
-min-height: 99vh;
-}
-  
 .navigatorControls {
 width: calc(var(--navigatorControlWidth) * 3);
 height: calc(var(--navigatorControlWidth) * 3);
@@ -67,10 +68,14 @@ background-color: rgba(255, 255, 255, 0.95);
 
 .navigatorControl.\--center /*,
 .navigatorControl.\--center:hover */ {
-background-color: rgba(255, 255, 255, 0.9);
+background: radial-gradient(rgb(255, 0, 0), rgb(127, 0, 0));
 }
 
 #BORDER,
+.navigatorControl.\--center {
+border: calc(var(--navigatorControlWidth) / 10) solid rgb(255, 255, 255);
+}
+
 .navigatorControls,
 .navigatorControl.\--center {
 border-radius: 50%;
@@ -82,8 +87,12 @@ box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.6), -1px -1px 1px rgb(255, 255, 255, 0.6)
 }
 
 #ELEMENT-PRESENTATION,
+.navigator,
 .navigatorControl {
 overflow: hidden;
+}
+
+.navigatorControl {
 clip-path: polygon(50% 0%, 100% 100%, 50% 75%, 0% 100%);
 cursor: pointer;
 }
@@ -91,6 +100,7 @@ cursor: pointer;
 .navigatorControl.\--center {
 clip-path: none;
 cursor: default;
+transform: translate(calc(var(--navigatorControlWidth) / -10), calc(var(--navigatorControlWidth) / -10));
 }
 
 
@@ -141,32 +151,33 @@ animation: animateArrowDown 1s infinite;
 animation: animateArrowLeft 1s infinite;
 }
 
+
 /* @KEYFRAMES */
 
 @keyframes animateArrowUp {
 
-  0% {transform: translate(0, 6px);}
- 50% {transform: translate(0, 0);}
-100% {transform: translate(0, 6px);}
+  0% {transform: translate(0, var(--startTranslate));}
+ 50% {transform: translate(0, var(--endTranslate));}
+100% {transform: translate(0, var(--startTranslate));}
 }
 
 @keyframes animateArrowRight {
 
-  0% {transform: rotate(90deg) translate(0, 6px);}
- 50% {transform: rotate(90deg) translate(0, 0);}
-100% {transform: rotate(90deg) translate(0, 6px);}
+  0% {transform: rotate(90deg) translate(0, var(--startTranslate));}
+ 50% {transform: rotate(90deg) translate(0, var(--endTranslate));}
+100% {transform: rotate(90deg) translate(0, var(--startTranslate));}
 }
 
 @keyframes animateArrowDown {
 
-  0% {transform: rotate(180deg) translate(0, 6px);}
- 50% {transform: rotate(180deg) translate(0, 0);}
-100% {transform: rotate(180deg) translate(0, 6px);}
+  0% {transform: rotate(180deg) translate(0, var(--startTranslate));}
+ 50% {transform: rotate(180deg) translate(0, var(--endTranslate));}
+100% {transform: rotate(180deg) translate(0, var(--startTranslate));}
 }
 
 @keyframes animateArrowLeft {
 
-  0% {transform: rotate(270deg) translate(0, 6px);}
- 50% {transform: rotate(270deg) translate(0, 0);}
-100% {transform: rotate(270deg) translate(0, 6px);}
+  0% {transform: rotate(270deg) translate(0, var(--startTranslate));}
+ 50% {transform: rotate(270deg) translate(0, var(--endTranslate));}
+100% {transform: rotate(270deg) translate(0, var(--startTranslate));}
 }
