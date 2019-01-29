@@ -19,6 +19,3 @@ const activateControl = (e) => {
 }
 
 navigatorControls.addEventListener('mouseover', activateControl, false);
-
-
-document.querySelector('.navigatorControl.--right').addEventListener('click', wakuSlideLeft, false);
