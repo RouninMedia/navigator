@@ -1,7 +1,7 @@
 # navigator
 A UI module for navigating a two-dimensional field.
 
-See **navigator** in action at:
+## Navigator (CSS and JS Version)
  
  * https://combinatronics.com/RouninMedia/navigator/master/css-and-js-version/index.html
  
