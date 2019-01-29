@@ -9,41 +9,30 @@
 
 #GLOBAL-CUSTOM-PROPERTIES,
 :root {
-  --wakuWidth: 49vw;
-  --wakuHeight: 31vw;
-
-  --navigatorControlWidth: 40px;
+--navigatorControlWidth: 40px;
 }
 
 #DISPLAY,
-.wakuSlideshow,
+body {
+display: flex;
+}
+
 .navigatorControls {
 display: grid;
 }
 
 #POSITION,
-.waku,
 .navigatorControl {
 position: relative;
 }
-
-.navigatorControls {
-position: absolute;
-}
-
-
-.CO-ORDINATES,
-.navigatorControls {
-right: 6px;
-bottom: 6px;
+  
+#FLEX-PARENT,
+body {
+justify-content: center;
+align-items: center;
 }
 
 #GRID-PARENT,
-.wakuSlideshow {
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-grid-template-rows: var(--wakuHeight);
-}
-
 .navigatorControls {
 grid-template-columns: var(--navigatorControlWidth) var(--navigatorControlWidth) var(--navigatorControlWidth);
 grid-template-rows: var(--navigatorControlWidth) var(--navigatorControlWidth) var(--navigatorControlWidth); 
@@ -57,12 +46,6 @@ grid-template-rows: var(--navigatorControlWidth) var(--navigatorControlWidth) va
 .navigatorControl.\--center {grid-area: 2 / 2 / 3 / 3;}
 
 #WIDTH_HEIGHT,
-.waku,
-.wakuFrame {
-width: var(--wakuWidth);
-height: var(--wakuHeight);
-}
-
 .navigatorControls {
 width: calc(var(--navigatorControlWidth) * 3);
 height: calc(var(--navigatorControlWidth) * 3);
@@ -72,16 +55,6 @@ height: calc(var(--navigatorControlWidth) * 3);
 width: var(--navigatorControlWidth);
 height: var(--navigatorControlWidth);
 }
-
-
-#MARGIN_PADDING,
-.waku {
-margin: 100px auto;
-}
-
-#TEXT-COLOR,
-
-#TEXT-PRESENTATION,
 
 #BACKGROUND,
 .navigatorControls {
@@ -102,60 +75,20 @@ background-color: rgba(255, 255, 255, 0.95);
 background-color: rgba(255, 255, 255, 0.9);
 }
 
-[data-row="01"][data-column="01"] {
-background-color: red;
-}
-
-[data-row="01"][data-column="02"] {
-background-color: orange;
-}
-
-[data-row="01"][data-column="03"] {
-background-color: yellow;
-}
-
-[data-row="01"][data-column="04"] {
-background-color: green;
-}
-
-[data-row="01"][data-column="05"] {
-background-color: blue;
-}
-
-[data-row="01"][data-column="06"] {
-background-color: indigo;
-}
-
-[data-row="01"][data-column="07"] {
-background-color: violet;
-}
-
 #BORDER,
-.waku {
-border: 2px solid rgb(0, 0, 0);
-}
-
 .navigatorControls,
 .navigatorControl.\--center {
 border-radius: 50%;
 }
 
 #BOX-SHADOW,
-.waku {
-box-shadow: 0 0 12px rgba(63, 63, 63, 0.6);
-}
-
 .navigatorControl.\--center {
 box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.6), -1px -1px 1px rgb(255, 255, 255, 0.6);
 }
 
 #ELEMENT-PRESENTATION,
-.waku,
 .navigatorControl {
 overflow: hidden;
-}
-
-.navigatorControl {
 clip-path: polygon(50% 0%, 100% 100%, 50% 75%, 0% 100%);
 cursor: pointer;
 }
@@ -184,10 +117,6 @@ transform: rotate(270deg) translate(0, calc(var(--navigatorControlWidth) / 10 * 
 }
 
 #TRANSITIONS,
-.wakuSlideshow {
-transition: transform 0.7s ease-out;
-}
-
 .navigatorControl {
 transition: transform 0.3s ease-out, background-color 0.6s ease-out;
 }
@@ -216,7 +145,6 @@ animation: animateArrowDown 1s infinite;
 .navigatorControl.\--left[data-control-state="active"] {
 animation: animateArrowLeft 1s infinite;
 }
-
 
 /* @KEYFRAMES */
 
@@ -247,7 +175,6 @@ animation: animateArrowLeft 1s infinite;
  50% {transform: rotate(270deg) translate(0, 0);}
 100% {transform: rotate(270deg) translate(0, 6px);}
 }
-  
   
 </style>
 </head>
