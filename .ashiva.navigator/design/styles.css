@@ -1,0 +1,172 @@
+#GLOBAL-CUSTOM-PROPERTIES,
+:root {
+--navigatorControlWidth: 160px;
+}
+
+#DISPLAY,
+body {
+display: flex;
+}
+
+.navigatorControls {
+display: grid;
+}
+
+#POSITION,
+.navigatorControl {
+position: relative;
+}
+  
+#FLEX-PARENT,
+body {
+justify-content: center;
+align-items: center;
+}
+
+#GRID-PARENT,
+.navigatorControls {
+grid-template-columns: var(--navigatorControlWidth) var(--navigatorControlWidth) var(--navigatorControlWidth);
+grid-template-rows: var(--navigatorControlWidth) var(--navigatorControlWidth) var(--navigatorControlWidth); 
+}
+
+#GRID-CHILDREN,
+.navigatorControl.\--up {grid-area: 1 / 2 / 2 / 3}
+.navigatorControl.\--right {grid-area: 2 / 3 / 3 / 4;}
+.navigatorControl.\--down {grid-area: 3 / 2 / 4 / 3;}
+.navigatorControl.\--left {grid-area: 2 / 1 / 3 / 2;}
+.navigatorControl.\--center {grid-area: 2 / 2 / 3 / 3;}
+
+#WIDTH_HEIGHT,
+body {
+min-height: 99vh;
+}
+  
+.navigatorControls {
+width: calc(var(--navigatorControlWidth) * 3);
+height: calc(var(--navigatorControlWidth) * 3);
+}
+
+.navigatorControl {
+width: var(--navigatorControlWidth);
+height: var(--navigatorControlWidth);
+}
+
+#BACKGROUND,
+.navigatorControls {
+background-color: rgba(0, 0, 0, 0.04);
+}
+
+.navigatorControl {
+background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* .navigatorControl:hover, */
+.navigatorControl[data-control-state="active"] {
+background-color: rgba(255, 255, 255, 0.95);
+}
+
+.navigatorControl.\--center /*,
+.navigatorControl.\--center:hover */ {
+background-color: rgba(255, 255, 255, 0.9);
+}
+
+#BORDER,
+.navigatorControls,
+.navigatorControl.\--center {
+border-radius: 50%;
+}
+
+#BOX-SHADOW,
+.navigatorControl.\--center {
+box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.6), -1px -1px 1px rgb(255, 255, 255, 0.6);
+}
+
+#ELEMENT-PRESENTATION,
+.navigatorControl {
+overflow: hidden;
+clip-path: polygon(50% 0%, 100% 100%, 50% 75%, 0% 100%);
+cursor: pointer;
+}
+
+.navigatorControl.\--center {
+clip-path: none;
+cursor: default;
+}
+
+
+#TRANSFORM,
+.navigatorControl.\--up {
+transform: translate(0, calc(var(--navigatorControlWidth) / 10 * 3));
+}
+
+.navigatorControl.\--right {
+transform: rotate(90deg) translate(0, calc(var(--navigatorControlWidth) / 10 * 3));
+}
+
+.navigatorControl.\--down {
+transform: rotate(180deg) translate(0, calc(var(--navigatorControlWidth) / 10 * 3));
+}
+
+.navigatorControl.\--left {
+transform: rotate(270deg) translate(0, calc(var(--navigatorControlWidth) / 10 * 3));
+}
+
+#TRANSITIONS,
+.navigatorControl {
+transition: transform 0.3s ease-out, background-color 0.6s ease-out;
+}
+
+.navigatorControl.\--center {
+transition: none;
+}
+
+#ANIMATIONS,
+/* .navigatorControl.\--up:hover, */
+.navigatorControl.\--up[data-control-state="active"] {
+animation: animateArrowUp 1s infinite;
+}
+
+/* .navigatorControl.\--right:hover, */
+.navigatorControl.\--right[data-control-state="active"] {
+animation: animateArrowRight 1s infinite;
+}
+
+/* .navigatorControl.\--down:hover, */
+.navigatorControl.\--down[data-control-state="active"] {
+animation: animateArrowDown 1s infinite;
+}
+
+/* .navigatorControl.\--left:hover, */
+.navigatorControl.\--left[data-control-state="active"] {
+animation: animateArrowLeft 1s infinite;
+}
+
+/* @KEYFRAMES */
+
+@keyframes animateArrowUp {
+
+  0% {transform: translate(0, 6px);}
+ 50% {transform: translate(0, 0);}
+100% {transform: translate(0, 6px);}
+}
+
+@keyframes animateArrowRight {
+
+  0% {transform: rotate(90deg) translate(0, 6px);}
+ 50% {transform: rotate(90deg) translate(0, 0);}
+100% {transform: rotate(90deg) translate(0, 6px);}
+}
+
+@keyframes animateArrowDown {
+
+  0% {transform: rotate(180deg) translate(0, 6px);}
+ 50% {transform: rotate(180deg) translate(0, 0);}
+100% {transform: rotate(180deg) translate(0, 6px);}
+}
+
+@keyframes animateArrowLeft {
+
+  0% {transform: rotate(270deg) translate(0, 6px);}
+ 50% {transform: rotate(270deg) translate(0, 0);}
+100% {transform: rotate(270deg) translate(0, 6px);}
+}
