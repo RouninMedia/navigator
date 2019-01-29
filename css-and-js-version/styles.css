@@ -1,6 +1,6 @@
 #GLOBAL-CUSTOM-PROPERTIES,
 :root {
-  --navigatorControlWidth: 20px;
+  --navigatorControlWidth: 80px;
   --translateUnit: calc(var(--navigatorControlWidth) / 20);
   --startTranslate : calc(var(--translateUnit) * 9);
   --endTranslate : calc(var(--translateUnit) * 3);
