@@ -41,6 +41,10 @@ align-items: center;
 }
 
 #WIDTH_HEIGHT,
+body {
+min-height: 99vh;
+}
+
 .navigatorControls {
 width: calc(var(--navigatorControlWidth) * 3);
 height: calc(var(--navigatorControlWidth) * 3);
