@@ -12,28 +12,28 @@
   --wakuWidth: 49vw;
   --wakuHeight: 31vw;
 
-  --wakuControlWidth: 40px;
+  --navigatorControlWidth: 40px;
 }
 
 #DISPLAY,
 .wakuSlideshow,
-.wakuControls {
+.navigatorControls {
 display: grid;
 }
 
 #POSITION,
 .waku,
-.wakuControl {
+.navigatorControl {
 position: relative;
 }
 
-.wakuControls {
+.navigatorControls {
 position: absolute;
 }
 
 
 .CO-ORDINATES,
-.wakuControls {
+.navigatorControls {
 right: 6px;
 bottom: 6px;
 }
@@ -44,17 +44,17 @@ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 grid-template-rows: var(--wakuHeight);
 }
 
-.wakuControls {
-grid-template-columns: var(--wakuControlWidth) var(--wakuControlWidth) var(--wakuControlWidth);
-grid-template-rows: var(--wakuControlWidth) var(--wakuControlWidth) var(--wakuControlWidth); 
+.navigatorControls {
+grid-template-columns: var(--navigatorControlWidth) var(--navigatorControlWidth) var(--navigatorControlWidth);
+grid-template-rows: var(--navigatorControlWidth) var(--navigatorControlWidth) var(--navigatorControlWidth); 
 }
 
 #GRID-CHILDREN,
-.wakuControl.\--up {grid-area: 1 / 2 / 2 / 3}
-.wakuControl.\--right {grid-area: 2 / 3 / 3 / 4;}
-.wakuControl.\--down {grid-area: 3 / 2 / 4 / 3;}
-.wakuControl.\--left {grid-area: 2 / 1 / 3 / 2;}
-.wakuControl.\--center {grid-area: 2 / 2 / 3 / 3;}
+.navigatorControl.\--up {grid-area: 1 / 2 / 2 / 3}
+.navigatorControl.\--right {grid-area: 2 / 3 / 3 / 4;}
+.navigatorControl.\--down {grid-area: 3 / 2 / 4 / 3;}
+.navigatorControl.\--left {grid-area: 2 / 1 / 3 / 2;}
+.navigatorControl.\--center {grid-area: 2 / 2 / 3 / 3;}
 
 #WIDTH_HEIGHT,
 .waku,
@@ -63,14 +63,14 @@ width: var(--wakuWidth);
 height: var(--wakuHeight);
 }
 
-.wakuControls {
-width: calc(var(--wakuControlWidth) * 3);
-height: calc(var(--wakuControlWidth) * 3);
+.navigatorControls {
+width: calc(var(--navigatorControlWidth) * 3);
+height: calc(var(--navigatorControlWidth) * 3);
 }
 
-.wakuControl {
-width: var(--wakuControlWidth);
-height: var(--wakuControlWidth);
+.navigatorControl {
+width: var(--navigatorControlWidth);
+height: var(--navigatorControlWidth);
 }
 
 
@@ -84,21 +84,21 @@ margin: 100px auto;
 #TEXT-PRESENTATION,
 
 #BACKGROUND,
-.wakuControls {
+.navigatorControls {
 background-color: rgba(0, 0, 0, 0.04);
 }
 
-.wakuControl {
+.navigatorControl {
 background-color: rgba(255, 255, 255, 0.6);
 }
 
-/* .wakuControl:hover, */
-.wakuControl[data-control-state="active"] {
+/* .navigatorControl:hover, */
+.navigatorControl[data-control-state="active"] {
 background-color: rgba(255, 255, 255, 0.95);
 }
 
-.wakuControl.\--center /*,
-.wakuControl.\--center:hover */ {
+.navigatorControl.\--center /*,
+.navigatorControl.\--center:hover */ {
 background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -135,8 +135,8 @@ background-color: violet;
 border: 2px solid rgb(0, 0, 0);
 }
 
-.wakuControls,
-.wakuControl.\--center {
+.navigatorControls,
+.navigatorControl.\--center {
 border-radius: 50%;
 }
 
@@ -145,42 +145,42 @@ border-radius: 50%;
 box-shadow: 0 0 12px rgba(63, 63, 63, 0.6);
 }
 
-.wakuControl.\--center {
+.navigatorControl.\--center {
 box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.6), -1px -1px 1px rgb(255, 255, 255, 0.6);
 }
 
 #ELEMENT-PRESENTATION,
 .waku,
-.wakuControl {
+.navigatorControl {
 overflow: hidden;
 }
 
-.wakuControl {
+.navigatorControl {
 clip-path: polygon(50% 0%, 100% 100%, 50% 75%, 0% 100%);
 cursor: pointer;
 }
 
-.wakuControl.\--center {
+.navigatorControl.\--center {
 clip-path: none;
 cursor: default;
 }
 
 
 #TRANSFORM,
-.wakuControl.\--up {
-transform: translate(0, calc(var(--wakuControlWidth) / 10 * 3));
+.navigatorControl.\--up {
+transform: translate(0, calc(var(--navigatorControlWidth) / 10 * 3));
 }
 
-.wakuControl.\--right {
-transform: rotate(90deg) translate(0, calc(var(--wakuControlWidth) / 10 * 3));
+.navigatorControl.\--right {
+transform: rotate(90deg) translate(0, calc(var(--navigatorControlWidth) / 10 * 3));
 }
 
-.wakuControl.\--down {
-transform: rotate(180deg) translate(0, calc(var(--wakuControlWidth) / 10 * 3));
+.navigatorControl.\--down {
+transform: rotate(180deg) translate(0, calc(var(--navigatorControlWidth) / 10 * 3));
 }
 
-.wakuControl.\--left {
-transform: rotate(270deg) translate(0, calc(var(--wakuControlWidth) / 10 * 3));
+.navigatorControl.\--left {
+transform: rotate(270deg) translate(0, calc(var(--navigatorControlWidth) / 10 * 3));
 }
 
 #TRANSITIONS,
@@ -188,32 +188,32 @@ transform: rotate(270deg) translate(0, calc(var(--wakuControlWidth) / 10 * 3));
 transition: transform 0.7s ease-out;
 }
 
-.wakuControl {
+.navigatorControl {
 transition: transform 0.3s ease-out, background-color 0.6s ease-out;
 }
 
-.wakuControl.\--center {
+.navigatorControl.\--center {
 transition: none;
 }
 
 #ANIMATIONS,
-/* .wakuControl.\--up:hover, */
-.wakuControl.\--up[data-control-state="active"] {
+/* .navigatorControl.\--up:hover, */
+.navigatorControl.\--up[data-control-state="active"] {
 animation: animateArrowUp 1s infinite;
 }
 
-/* .wakuControl.\--right:hover, */
-.wakuControl.\--right[data-control-state="active"] {
+/* .navigatorControl.\--right:hover, */
+.navigatorControl.\--right[data-control-state="active"] {
 animation: animateArrowRight 1s infinite;
 }
 
-/* .wakuControl.\--down:hover, */
-.wakuControl.\--down[data-control-state="active"] {
+/* .navigatorControl.\--down:hover, */
+.navigatorControl.\--down[data-control-state="active"] {
 animation: animateArrowDown 1s infinite;
 }
 
-/* .wakuControl.\--left:hover, */
-.wakuControl.\--left[data-control-state="active"] {
+/* .navigatorControl.\--left:hover, */
+.navigatorControl.\--left[data-control-state="active"] {
 animation: animateArrowLeft 1s infinite;
 }
 
