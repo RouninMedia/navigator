@@ -8,4 +8,8 @@ A UI module for navigating a two-dimensional field.
 ## Navigator (CSS and JS Version)
  
  * https://combinatronics.com/RouninMedia/navigator/master/css-and-js-version/index.html
+
+_____
+
+**N.B.** When returning to work on **navigator**, see also: https://prezi.com/embed/jyf2tmiywnng/ for inspiration.
  
